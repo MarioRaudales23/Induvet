@@ -2,7 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler, Header } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
-import{ HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Http } from '@angular/http';
 import { MyApp } from './app.component';
 
@@ -29,21 +29,19 @@ import { ShowproductPage } from "../pages/showproduct/showproduct";
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule} from 'angularfire2/auth';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HeaderComponent } from './header/header.component';
-import { CotizarPage} from "../pages/cotizar/cotizar";
+import { CotizarPage } from "../pages/cotizar/cotizar";
 import { GlobalProvider } from '../providers/global/global';
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyBZAKqZfYiuQDTF-pDtZsxlO5X72wNFA1Q",
-  authDomain: "realva-54c4a.firebaseapp.com",
-  databaseURL: "https://realva-54c4a.firebaseio.com",
-  projectId: "realva-54c4a",
-  storageBucket: "realva-54c4a.appspot.com",
-  messagingSenderId: "233461489484"
-
-
+  apiKey: "AIzaSyDDzZtyfob58UodI-DHwpU7T1qmkT1TJF8",
+  authDomain: "induvet-cb00d.firebaseapp.com",
+  databaseURL: "https://induvet-cb00d.firebaseio.com",
+  projectId: "induvet-cb00d",
+  storageBucket: "induvet-cb00d.appspot.com",
+  messagingSenderId: "598870481132"
 };
 @NgModule({
   declarations: [

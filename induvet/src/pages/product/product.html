@@ -1,0 +1,192 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons end>
+      <app-header></app-header>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="row mt-3">
+        <div class="col col-lg-3 col-md-3 col-sm-12 col-12 mt-2">
+          <h1>Categorias</h1>
+          <div class="nav-side-menu">
+            <div class="brand">Realva</div>
+            <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+                <div class="menu-list">
+
+                    <ul id="menu-content" class="menu-content collapse out">
+
+                        <li  data-toggle="collapse" data-target="#especies" id="test" class="collapsed" (click)="highlightMe(1)">
+                          <a href="#"><i class="fa fa-paw fa-lg"></i> Especies <span class="arrow"></span></a>
+                        </li>
+                        <ul class="sub-menu collapse" id="especies">
+                            <li><label class="myLabel"><input id="Caninos" type="checkbox" value="CANINOS" (change)="getItemsCheck($event)">Caninos</label></li>
+                            <li><label class="myLabel"><input id="Bovinos" type="checkbox" value="BOVINOS" (change)="getItemsCheck($event)">Bovinos</label></li>
+                            <li><label class="myLabel"><input id="Equinos" type="checkbox" value="EQUINOS" (change)="getItemsCheck($event)">Equinos</label></li>
+                            <li><label class="myLabel"><input id="Ovinos" type="checkbox" value="OVINOS" (change)="getItemsCheck($event)">Ovinos</label></li>
+                            <li><label class="myLabel"><input id="Caprinos" type="checkbox" value="CAPRINOS" (change)="getItemsCheck($event)">Caprinos</label></li>
+                            <li><label class="myLabel"><input id="Felinos" type="checkbox" value="FELINOS" (change)="getItemsCheck($event)">Felinos</label></li>
+                            <li><label class="myLabel"><input id="Zorros" type="checkbox" value="ZORROS" (change)="getItemsCheck($event)">Zorros</label></li>
+                            <li><label class="myLabel"><input id="Hurones" type="checkbox" value="HURONES" (change)="getItemsCheck($event)">Hurones</label></li>
+                            <li><label class="myLabel"><input id="Todas Especies" type="checkbox" value="TODAS ESPECIES" (change)="getItemsCheck($event)">Todas Especies</label></li>
+                            <li><label class="myLabel"><input id="Porcinos" type="checkbox" value="PORCINOS" (change)="getItemsCheck($event)">Porcinos</label></li>
+                            <li><label class="myLabel"><input id="Conejos" type="checkbox" value="CONEJOS" (change)="getItemsCheck($event)">Conejos</label></li>
+                            <li><label class="myLabel"><input id="Aves de Engorde" type="checkbox" value="AVES DE ENGORDE" (change)="getItemsCheck($event)">Aves de Engorde</label></li>
+                            <li><label class="myLabel"><input id="Aves de Postura" type="checkbox" value="AVES DE POSTURA" (change)="getItemsCheck($event)">Aves de Postura</label></li>
+                            <li><label class="myLabel"><input id="Aves de Traspatio" type="checkbox" value="AVES DE TRASPATIO" (change)="getItemsCheck($event)">Aves de Traspatio</label></li>
+                            <li><label class="myLabel"><input id="Pavos" type="checkbox" value="PAVOS" (change)="getItemsCheck($event)">Pavos</label></li>
+                            <li><label class="myLabel"><input id="Gallos de Pelea" type="checkbox" value="Gallos de Pelea" (change)="getItemsCheck($event)">Gallos de Pelea</label></li>
+                            <li><label class="myLabel"><input id="Aves" type="checkbox" value="AVES" (change)="getItemsCheck($event)">Aves</label></li>
+                           
+                        </ul>
+
+
+                        <li data-toggle="collapse" data-target="#unidadTecnica" id="ut" class="collapsed" (click)="highlightMe(2)">
+                          <a href="#"><i class="fa fa-globe fa-lg"></i> Unidad Técnica <span class="arrow"></span></a>
+                        </li>
+                        <ul class="sub-menu collapse" id="unidadTecnica">
+                          <li><label class="myLabel"><input id="Animales de Produccion" *ngIf="filtTec == '' || filtTec == 'ANIMALES DE PRODUCCIÓN' " type="checkbox" value="ANIMALES DE PRODUCCIÓN" (change)="getItemsCheckTec($event)">Animales de Producción</label></li>
+                          <li> <label class="myLabel"><input id="Animales de Compañia" *ngIf="filtTec == '' || filtTec == 'ANIMALES DE COMPAÑÍA' " type="checkbox" value="ANIMALES DE COMPAÑÍA" (change)="getItemsCheckTec($event)">Animales de Compañía</label></li>
+                        </ul>
+
+
+                        <li data-toggle="collapse" data-target="#laboratorio" id="lab" class="collapsed" (click)="highlightMe(3)">
+                          <a href="#"><i class="fa fa-flask fa-lg"></i> Laboratorio <span class="arrow"></span></a>
+                        </li>
+                        <ul class="sub-menu collapse" id="laboratorio">
+                          
+                          <li><label class="myLabel"><input id="LAVET" *ngIf="filtLab == '' || filtLab == 'LAVET' " type="checkbox" value="LAVET" (change)="getItemsCheckLab($event)">LAVET</label></li>
+                            <li><label class="myLabel"><input id="LABIPHARM" *ngIf="filtLab == '' || filtLab == 'LABIPHARM' " type="checkbox" value="LABIPHARM" (change)="getItemsCheckLab($event)">LABIPHARM</label></li>
+                              <li><label class="myLabel"><input id="INVET"  *ngIf="filtLab == '' || filtLab == 'INVET' "type="checkbox" value="INVET" (change)="getItemsCheckLab($event)">INVET</label></li>
+                                <li><label class="myLabel"><input id="LABORATORIOS VM"  *ngIf="filtLab == '' || filtLab == 'LABORATORIOS VM' " type="checkbox" value="LABORATORIOS VM" (change)="getItemsCheckLab($event)">LABORATORIOS VM</label></li>
+                                  <li><label class="myLabel"><input id="SCHIPPERS - VET BRANDS" *ngIf="filtLab == '' || filtLab == 'SCHIPPERS - VET BRANDS' " type="checkbox" value="SCHIPPERS - VET BRANDS" (change)="getItemsCheckLab($event)">SCHIPPERS - VET BRANDS</label></li>
+                                    <li><label class="myLabel"><input id="ERMA" type="checkbox"  *ngIf="filtLab == '' || filtLab == 'ERMA' "value="ERMA" (change)="getItemsCheckLab($event)">ERMA</label></li>
+                                      <li><label class="myLabel"><input id="GAMMA" type="checkbox"  *ngIf="filtLab == '' || filtLab == 'GAMMA' "value="GAMMA" (change)="getItemsCheckLab($event)">GAMMA</label></li>
+                                        <li><label class="myLabel"><input id="MSD - ANIMAL HEALTH"  *ngIf="filtLab == '' || filtLab == 'MSD - ANIMAL HEALTH' "type="checkbox" value="MSD - ANIMAL HEALTH" (change)="getItemsCheckLab($event)">MSD - ANIMAL HEALTH</label></li>
+                        </ul>
+                    </ul>
+             </div>
+        </div>
+        </div>
+        <div class="col col-lg-9 col-md-9 col-sm-12 col-12 mt-2">
+            <h1>Productos</h1>
+            <div class="well well-sm">
+                <strong>Tipo de Vista</strong>
+                <div class="btn-group">
+                    <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+                    </span>Lista</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+                        class="glyphicon glyphicon-th"></span>Cuadros</a>
+                </div>
+            </div>
+            <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+            <div id="products" class="row grid-group">
+                <div class="item  col-xs-4 col-lg-4" *ngFor='let producto of filterList '>
+                    <div class="thumbnail">
+                        <img class="group grid-group-image" src={{producto.imagen}} alt="">
+                        <div class="caption">
+                            <h4 class="group inner grid-group-item-heading">
+                                {{producto.nombre}}
+                            </h4>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <p class="lead" *ngIf="LoginRegister.userLogged != null">
+                                        Precio: L. {{producto.precio}}</p>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <a class="btn btn-success" (click)="push(producto)">Mirar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+  </div>
+  <div class="container">
+
+  </div>
+
+  <div class="footer-distributed">
+    <div class="footer-left">
+
+      <h3>Distribuidora
+        <span>Realva</span>
+      </h3>
+
+      <p class="footer-links">
+        <a href="#">Inicio</a>
+        ·
+        <a href="#">Productos</a>
+        ·
+        <a href="#">Nosotros</a>
+        ·
+        <a href="#">Contacto</a>
+        ·
+        <a href="#">Descargas</a>
+      </p>
+
+      <p class="footer-company-name">Realva &copy; 2018</p>
+    </div>
+
+    <div class="footer-center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p>
+          <span>
+            Edificio Alvarenga, Boulevard Morazán.</span> Tegucigalpa, Honduras</p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p> +(504) 2236-5531 / 2236-5902 / 2236-8719</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p>
+          <a href="mailto:support@company.com">info@realva.com</a>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-company-about">
+        <span>Acerca de Nosotros</span>
+        Empresas Productoras, Importadoras y Distribuidoras de Productos Veterinarios y Agrícolas. Las empresas manejan la representación
+        de diversas líneas Veterinarias de calidad y está en proceso de comenzar la distribución de líneas de productos agrícolas.
+      </p>
+
+      <div class="footer-icons">
+
+        <a href="https://www.facebook.com/RealvaHonduras/">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="#">
+            <i class="fa fa-youtube"></i>
+          </a>
+          <a href="#">
+              <i class="fa fa-instagram"></i>
+          </a>
+
+      </div>
+    </div>
+  </div>
+
+</ion-content>

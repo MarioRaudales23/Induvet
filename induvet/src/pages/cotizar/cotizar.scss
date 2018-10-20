@@ -1,0 +1,18 @@
+page-cotizar{
+  .cotizarBody{
+    margin-left: 2%;
+    width: 100%;
+    height: 100%;
+    margin-top: 2%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+  .cotizarProductos{
+    width: 50%;
+  }
+  .cotizarFormulario{
+    margin-left: 3%;
+    width: 30%;
+  }
+}
